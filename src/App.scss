@@ -1,0 +1,363 @@
+$primary: #f5933d;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top:180px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h2, h3, h4, h5, h6, button {
+    font-family: 'Roboto Slab', serif;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    color: $light;
+    font-weight:bolder;
+}
+
+.divider {
+    border-radius: 4rem;
+    width:50%;
+    border: 2px solid rgba(187, 187, 187, 0.171);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.border {
+    border: 2px solid pink;
+}
+
+header {
+    .fa {
+        font-size: 1.5rem;
+    }
+
+    .img-fluid {
+        max-width: 125px;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 113px;
+        left: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        transition: all 0.4s ease;
+        display: block;
+        background-color: $light;
+    }
+    .navbar-collapse.collapsing {
+        height: auto !important;
+        margin-left: 50%;
+        left: 50%;
+        transition: all 0.2s ease;
+    }
+    .navbar-collapse.show {
+        left: 0;
+    }
+}
+
+.hamburger-wrapper {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    border-radius: 1px;
+    margin: -1px 0 0 -15px;
+    transition: height 100ms ease-in;
+    
+    &:after, &:before {
+        content:'';
+        position:absolute;
+        height: 2px;
+        width:100%;
+        left:50%;
+        margin-left:-15px;
+        background-color: black;
+        border-radius: 1px;
+        transition: all 300ms ease-in-out;
+    }
+
+    &:before {
+        top:-7px;
+    }
+
+    &:after {
+        bottom:-7px;
+    }
+}
+
+.ham-menu-on {
+    .hamburger {
+        height: 0;
+
+        &:after, &:before {
+            top: 1px;
+        }
+
+        &:after {
+            transform: rotate(45deg);
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &.ham-menu {
+        opacity: 1;
+        left: 0;
+    }
+
+}
+
+#mobileNavbar .nav-item {
+    font-size: small;
+}
+
+.nav-item {
+    font-family: 'roboto slab', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color:black!important;
+}
+
+.nav-link:hover {
+    color:var(--primary)!important;
+}
+
+.about-left {
+    text-align: right;
+}
+
+.about-right {
+    text-align: left;
+}
+
+.team-img {
+    border-bottom: .5rem solid var(--primary);
+}
+
+.hero-row {
+    background: black;
+    overflow: hidden;
+
+    img {
+        opacity: 0.4;
+    }
+}
+
+.hero-row.hero-bg {
+    /* height: 80vh; */
+    height: 60vh;
+}
+
+.hero-bg {
+    background-color: rgba(0,0,0,.4);
+    background-image: url("./hero-product-tankmain.jpg");
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-text
+{
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    color: #FFF;
+}
+
+#carouselExampleIndicators img {
+    background-color: black;
+}
+
+.top-button {
+    position: fixed;
+    right: 10px;
+    bottom: 35px;
+    z-index:1040;
+
+    i {
+        background-color:rgba(0, 0, 0, .8);
+        transition: transform 250ms ease-in-out;
+        border-radius: .25rem; 
+    }
+
+    i:hover {
+        transform: scale(1.3);
+    }
+}
+
+.card-body.collection-border {
+    padding-top: .33rem;
+    padding-bottom: .1rem;
+}
+
+.collection-border {
+    border-top: .5rem solid var(--primary);
+
+    h6 {
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+
+.price {
+    color: rgb(0, 173, 0);
+    font-weight:700;
+}
+
+.card-footer i {
+    font-size: 1.6rem;
+    margin: .1rem;
+}
+
+#preorder {
+    .card {
+        -webkit-box-shadow: .01rem .01rem .4rem .01rem rgba(0,0,0,0.1); 
+        box-shadow:         .01rem .01rem .4rem .01rem rgba(0,0,0,0.1);
+        transition: transform 250ms ease-in-out,
+                    box-shadow 250ms ease-in-out;
+    }
+
+    .card:hover,
+    .card:active {
+        transform: scale(1.025);
+        -webkit-box-shadow: .1rem .1rem .8rem .01rem rgba(0,0,0,0.2); 
+        box-shadow:         .1rem .1rem .8rem .01rem rgba(0,0,0,0.2);
+    }
+}
+
+#story .media {
+    img {
+        border-radius: 50%;
+        width:150px;
+        padding: 1rem;
+    }
+
+    h6 {
+        border-left: 6px solid $primary;
+        font-size: smaller;
+    }
+}
+
+.fa-facebook-square {
+    color:#3b5998;
+}
+
+.fa-twitter-square {
+    color:#1DA1F2;
+}
+
+.fa-youtube-square {
+    color: #ff0000;
+}
+
+.fa-instagram {
+    /* background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    clip-path: inset(4px 1px);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+    color: #000;
+} 
+
+.fa-share-alt-square {
+    color: var(--primary);
+}
+
+footer {
+    .fa {
+        color:#000;
+        transition: transform 250ms ease-in-out;
+        font-size: 3rem;
+    }
+
+    .fa:hover,
+    .fa:active {
+        transform: scale(2);
+    }
+
+    .small {
+        font-size: .7rem;
+        font-style: italic;
+    }
+}
+
+.sticky {
+    font-size:x-small;
+    background-color: white;
+
+    .fa {
+        font-size: 1rem;
+    }
+}
+
+.faq {
+    .card {
+        margin: 1rem 0;
+    }
+
+    .card-header {
+        cursor:pointer;
+    }
+}
+
+#sizing {
+    .card {
+        margin-top: 1.5rem;
+    }
+
+    .card img {
+        width: 150px;
+        align-self: center;
+        padding: 1.5rem;
+    }
+
+    h6 {
+        font-size: small;
+        font-style: italic;
+    }
+}
+
+#donation {
+    img {
+        border-top: 6px solid $primary;
+    }
+}
+
+
