@@ -19,7 +19,7 @@ class StorySection extends React.Component {
 
 
         return (
-            <div className="container my-4" id="story">
+            <div className="container my-4" id="ourstory">
                 <div className="text-center">
                     <h2 className="">This is who we are...</h2>
                     <div className="row">

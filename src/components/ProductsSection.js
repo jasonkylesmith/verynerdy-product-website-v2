@@ -14,7 +14,7 @@ class ProductsSection extends React.Component {
         const cards = this.state.products.map(product => {
             return (
                 <ProductCard key={product.id} product={product} />
-            )
+            );
         })
 
 

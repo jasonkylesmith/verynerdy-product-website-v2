@@ -2,9 +2,9 @@ import React from 'react';
 import Home from './Home';
 import TOS from './TOS';
 import FAQ from './FAQ';
-import Sizing from './Sizing';
 import Donations from './Donations';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { FAQ_DATA } from '../shared/faq-data';
 
 class Main extends React.Component {
     constructor(props){
@@ -27,13 +27,7 @@ class Main extends React.Component {
 
         const FAQPage = () => {
             return (
-                <FAQ />
-            );
-        }
-
-        const SizingPage = () => {
-            return (
-                <Sizing />
+                <FAQ data={FAQ_DATA}/>
             );
         }
 
@@ -51,7 +45,6 @@ class Main extends React.Component {
                     <Route path='/home' component={HomePage} />
                     <Route path='/TOS' component={TOSPage} />
                     <Route path='/FAQ' component={FAQPage} />
-                    <Route path='/Sizing' component={SizingPage} />
                     <Route path='/Donations' component={DonationsPage} />
                     <Redirect to='/home' />
                 </Switch>

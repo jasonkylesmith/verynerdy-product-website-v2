@@ -3,6 +3,9 @@ The Very Nerdy Clothing Company site is a front-end example of a pre-order merch
 
 To Do:
 
+- Create and populate secondary pages, and any components required
+    - FAQ accordians
+    - Sizing Chart Tables
 - Newsletter Modal
 - Newsletter Modal: Email Validation
 - Product Modal

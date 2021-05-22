@@ -57,10 +57,11 @@ export const PRODUCT_DATA = [
         flavorText: "Nothing says you're the toughest player in your squad than this tank top, no kap.",
         specText: "This Unisex Jersey Tank Top achieves a slim fit without sacrificing comfort.",
         options: [
+            "XS",
             "S", 
             "M", 
             "L", 
-            "XL"
+            "XL",
         ],
         price: "$25"
     },

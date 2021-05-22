@@ -8,7 +8,7 @@ class NavigationItem extends React.Component {
     
 
     render(){
-        const hrefText = `index.html#${this.props.target.replace(/[^a-zA-Z0-9]/g, '')}`;
+        const hrefText = `/home#${this.props.target.replace(/[^a-zA-Z0-9]/g, '')}`;
 
         return (
             <li className="nav-item">
