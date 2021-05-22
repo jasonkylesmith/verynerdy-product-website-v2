@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialButton from './SocialButton';
 
 class ProductCard extends React.Component {
     constructor(props){
@@ -18,16 +19,17 @@ class ProductCard extends React.Component {
                 <div className="card-footer pt-2">
                     <div className="row">
                         <div className="col-12 col-sm-6 text-center text-sm-left">
-                            <button className="btn btn-outline-success btn-sm order-button" type="button" data-product="0" id="orderButton1">Order</button>
+                            <button className="btn btn-outline-success btn-sm order-button" type="button" data-product="0" id="orderButton1"><i className="fa fa-cart-plus"></i></button>
                         </div>
                         <div className="col-12 col-sm-6 text-center text-sm-right">
                             <div>
                                 <h5 className="price">{this.props.product.price}</h5>
                             </div>
                             <div>
-                                <i className="fa fa-facebook-square"></i>
-                                <i className="fa fa-twitter-square"></i>
-                                <i className="fa fa-share-alt-square"></i>
+                                <SocialButton shareType="facebook" />
+                                <SocialButton shareType="twitter" />
+                                <SocialButton shareType="share" />
+                        
                             </div>  
                         </div>
                     </div>

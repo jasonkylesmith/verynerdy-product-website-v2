@@ -13,7 +13,7 @@ class ProductsSection extends React.Component {
     render(){
         const cards = this.state.products.map(product => {
             return (
-                <ProductCard product={product} />
+                <ProductCard key={product.id} product={product} />
             )
         })
 

@@ -13,7 +13,7 @@ class StorySection extends React.Component {
     render(){
         const stories = this.state.stories.map(story => {
             return (
-                <StoryCoreItem story={story} />
+                <StoryCoreItem key={story.id} story={story} />
             )
         })
 
@@ -29,7 +29,7 @@ class StorySection extends React.Component {
                             <p>As a lifetime member of the nerd club, nothing feels better than being able to channel that into creative endevours and sharing that passion with others. I love making these designs, I love what they represent, and I hope you love them too!</p>
                         </div>
                         <div className="order-1 order-lg-2 col-12 col-lg-6 py-3">               
-                                <img src="/assets/aboutus8.jpg" alt="The Founders" class="img-fluid team-img"></img>
+                                <img src="/assets/aboutus8.jpg" alt="The Founders" className="img-fluid team-img"></img>
                         </div>
                         <div className="order-3 order-lg-3 col-6 col-lg-3 about-right mt-lg-4 pr-lg-5">
                             <h4>Sarah</h4>
