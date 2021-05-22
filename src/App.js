@@ -1,24 +1,19 @@
 import './App.scss';
 import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import ProductsSection from './components/ProductsSection';
-import StorySection from './components/StorySection';
+import Home from './components/Home';
+import Main from './components/Main';
 import Footer from './components/Footer';
-import Divider from './components/Divider';
-import ToTopButton from './components/ToTopButton';
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
   return (
     <div>
-      <Header />
-      <HeroSection />
-      <Divider />
-      <ProductsSection />
-      <Divider />
-      <StorySection />
-      <Divider />
-      <ToTopButton />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Main />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
