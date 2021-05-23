@@ -5,6 +5,9 @@ To Do:
 
 
 - Newsletter Modal: Email Validation
+- Product Card
+    - Remove social share buttons
+    - Size button and add "Add to Cart" text on all but smallest of screens
 - Product Modal
     - Add tab navigation for sizing?
 - Aria accessability
