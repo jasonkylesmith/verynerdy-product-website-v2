@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationItem from './NavigationItem';
+import ShoppingCartIcon from './ShoppingCartIcon';
 
 class Navigation extends React.Component {
     constructor(props){
@@ -27,14 +28,17 @@ class Navigation extends React.Component {
         /* const classes = this.state.navClasses + " " + this.props.showMenu; */
 
         const classes = `${this.state.navClasses}`;
-        console.log(this.props.navType + " Menu: " + this.props.showMenu);
-        console.log(this.props.navType + " Classes: " + classes)
         return (
             <nav key={this.props.navType} className={classes} id={this.state.navId}>
                 <ul className={this.state.ulClasses}>
                     <NavigationItem target="pre-order" />
                     <NavigationItem target="our story" />
-                    
+                    <ShoppingCartIcon />
+                    {/* <li className="nav-item">
+                        <a className="nav-link">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </li> */}
                 </ul>
             </nav>
         )

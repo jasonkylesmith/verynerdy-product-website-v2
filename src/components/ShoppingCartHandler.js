@@ -1,15 +1,24 @@
-import React from 'react';
-import ProductsSection from './ProductsSection';
+import React, { createContext } from 'react';
 import ShoppingCartIcon from './ShoppingCartIcon';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+
+
+
+export const CartContext = createContext();
 
 class ShoppingCartHandler extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             cart: [
-
+                {
+                    test: "working"
+                }
             ]
         }
+        console.log(this.state.cart);
     }
 
     updateCartState(updatedCart){
@@ -54,12 +63,15 @@ class ShoppingCartHandler extends React.Component{
     render(){
         return (
             <React.Fragment>
-                <ProductsSection />
-                <ShoppingCartIcon />
+                <CartContext.Provider value={this.state.cart}>
+                    <Header />
+                    <Main />
+                    <Footer />
+                </CartContext.Provider>
             </React.Fragment>
         )
     }
 }
 
-export default ShoppingCartHandler;
+export { ShoppingCartHandler };
 

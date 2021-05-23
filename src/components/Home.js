@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from './HeroSection';
-import ShoppingCartHandler from './ShoppingCartHandler';
+import ProductsSection from './ProductsSection';
 import StorySection from './StorySection';
 import Divider from './Divider';
 import ToTopButton from './ToTopButton';
@@ -12,7 +12,7 @@ function Home(props) {
             <React.Fragment>
                 <HeroSection />
                 <Divider />
-                <ShoppingCartHandler />
+                <ProductsSection />
                 <Divider />
                 <StorySection />
                 <Divider />

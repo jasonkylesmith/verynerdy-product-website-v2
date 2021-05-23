@@ -150,6 +150,15 @@ header {
     font-family: 'roboto slab', serif;
     font-weight: 700;
     text-transform: uppercase;
+
+    .fa-shopping-cart {
+        font-size: 1rem;
+        cursor:pointer;
+    }
+
+    .nav-link {
+        cursor:pointer;
+    }
 }
 
 .nav-link {
@@ -264,12 +273,33 @@ header {
     }
 }
 
-.fa-shopping-cart {
-    position: fixed;
-    right: 1rem;
-    top: 200px;
+.fa-shopping-cart.popup {
+    
     color: $primary;
-    font-size: 2rem;
+    font-size: 1rem;
+    padding: .25rem;
+
+    &.docked {
+        right: -1rem;
+    }
+
+    &.hidden {
+        right: -3rem;
+    }
+
+}
+
+.cart-icon-wrap{
+    position: fixed;
+    right: -1.5rem;
+    top: 200px;
+    border: 2px solid $primary;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 #ourstory .media {
