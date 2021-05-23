@@ -1,15 +1,14 @@
 import React from 'react';
+import NewsletterModal from './NewsletterModal';
 
-class NewsletterButton extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
-    render(){
-        return (
-            <button className="btn btn-primary btn-sm mt-4" type="button" id={this.props.btnId}>{this.props.btnText}</button>
-        )
-    }
+function NewsletterButton(props) {
+    return (
+            <div>
+                {/* <button className="btn btn-primary btn-sm mt-4" type="button" id={this.props.btnId} title="newslettermodal" body="please work" show onClick={NewsletterModal}>{this.props.btnText}</button> */}
+                <NewsletterModal />
+            </div>
+            )
 }
+
 
 export default NewsletterButton;
