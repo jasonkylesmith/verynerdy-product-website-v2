@@ -24,4 +24,4 @@ Completed:
 - Create and populate secondary pages, and any components required (5/22)
     - FAQ accordians
     - Sizing Chart Tables
-- Newsletter Modal
+- Newsletter Modal (5/22)

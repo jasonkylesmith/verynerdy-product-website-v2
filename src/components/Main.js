@@ -9,6 +9,14 @@ import { FAQ_DATA } from '../shared/faq-data';
 class Main extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            cart: [
+                {
+                    
+                }
+            ]
+
+        };
     }
 
     render(){

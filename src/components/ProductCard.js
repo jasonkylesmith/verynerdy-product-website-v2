@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialButton from './SocialButton';
+import ProductModal from './ProductModal';
 
 class ProductCard extends React.Component {
     constructor(props){
@@ -7,7 +8,6 @@ class ProductCard extends React.Component {
     }
 
     render(){
-        console.log(this.props.product.imgPath);
         return (
             <div className="card col-5 col-lg-3 mx-md-1 mt-md-5 mt-5 p-0">
                 <img src={this.props.product.imgPath} alt="The Big Three Special Edition Darkmode Cotton Hat" className="card-img-top"></img>
@@ -19,7 +19,8 @@ class ProductCard extends React.Component {
                 <div className="card-footer pt-2">
                     <div className="row">
                         <div className="col-12 col-sm-6 text-center text-sm-left">
-                            <button className="btn btn-outline-success btn-sm order-button" type="button" data-product="0" id="orderButton1"><i className="fa fa-cart-plus"></i></button>
+                            {/* <button className="btn btn-outline-success btn-sm order-button" type="button" data-product="0" id="orderButton1"><i className="fa fa-cart-plus"></i></button> */}
+                            <ProductModal product={this.props.product} />
                         </div>
                         <div className="col-12 col-sm-6 text-center text-sm-right">
                             <div>
