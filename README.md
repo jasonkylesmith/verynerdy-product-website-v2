@@ -3,7 +3,6 @@ The Very Nerdy Clothing Company site is a front-end example of a pre-order merch
 
 To Do:
 
-
 - Newsletter Modal: Email Validation
 - Product Card
     - Remove social share buttons
@@ -12,6 +11,12 @@ To Do:
     - Add tab navigation for sizing?
 - Aria accessability
 - Cart / Checkout Pages
+
+
+Notes:
+
+- Use State to share cart data between ShoppingCart and ProductSection components by passing them a function that modifies a parents setState method
+    - This method would only setState to change the object for items added to the cart from the ProductModal, which would then rerender the ShoppingCart to include the updated state
 
 
 Completed:
