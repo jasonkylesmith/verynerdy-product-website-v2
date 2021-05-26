@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+import { CartContext } from './ShoppingCartContext';
 import { Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
+
+
+
 
 const ProductModal = (props) => {
     const [modal, setModal] = useState(false);
@@ -13,6 +17,8 @@ const ProductModal = (props) => {
             </option>
         );
     })
+
+    const cart = useContext(CartContext);
 
     return (
         <div>
@@ -53,7 +59,15 @@ const ProductModal = (props) => {
                                         </Label>
                                     </Col>
                                     <Col className="text-center mt-3" xs="12">
-                                        <Button size="sm" color="success">Add to Cart</Button>
+                                        <CartContext.Consumer>
+                                            {context => (
+                                                <Button size="sm" color="success" onClick={() => {
+                                                    context.add.addToCart({test2:"working"})
+                                                }}>Add to Cart</Button>
+                                                
+                                                
+                                            )}
+                                        </CartContext.Consumer>
                                     </Col>          
                                 </FormGroup>
                             </Form>

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {CartContext, CartConsumer} from './ShoppingCartContext';
+import {CartContext} from './ShoppingCartContext';
 import {Badge, Button} from 'reactstrap';
 
 function ShowNumOfItems(length){
@@ -25,9 +25,9 @@ function ShoppingCartIcon(props) {
                             {/* {ShowNumOfItems(cart.cart.cart.length)} */}
                             {ShowNumOfItems(context.cart.cart.cart.length)}
                         </a>
-                        <Button onClick={() => {
+                        {/* <Button onClick={() => {
                             context.add.addToCart({test2: "working"})
-                        }}>Click</Button>
+                        }}>Click</Button> */}
                     </li>
 
 

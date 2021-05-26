@@ -4,7 +4,7 @@ The Very Nerdy Clothing Company site is a front-end example of a pre-order merch
 To Do:
 
 
-- Newsletter Modal: Email Validation
+
 - Product Card
     - Remove social share buttons
     - Size button and add "Add to Cart" text on all but smallest of screens
@@ -33,3 +33,4 @@ Completed:
 - Cart / Checkout Pages
     - Cart / Badge Navigation (5/23)
     - Setup Cart Context (5/23)
+- Newsletter Modal: Email Validation (5/25)
