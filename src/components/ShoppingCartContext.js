@@ -19,7 +19,9 @@ export const CartProvider = (props) => {
     const [cart, setCart] = useState({
         cart: [
             
-        ]
+        ],
+        newCartId: 0,
+        showCart: false
     });
 
   
@@ -30,18 +32,22 @@ export const CartProvider = (props) => {
         console.log(cart);
     } */
 
+    function toggleShowCart(){
+        setCart({...cart, showCart: !cart.showCart});
+    }
+
     function addToCart(item){
         const newCart = cart.cart;
-        newCart.push(item)
-        setCart({
-            cart: newCart
-        });
+
+        newCart.push({...item, cartId: (cart.newCartId+1)});
+        
+        setCart({...cart, cart: newCart, newCartId: cart.newCartId+1});
         console.log(cart);
     }
 
     function removeFromCart(item){
         const newCart = cart.cart;
-        const itemIndex = newCart.findIndex(item.id);
+        const itemIndex = newCart.findIndex(item.cartId);
         newCart.splice(itemIndex, 1);
         
     }
@@ -75,7 +81,8 @@ export const CartProvider = (props) => {
                 add: {addToCart},
                 remove: {removeFromCart},
                 change: {changeQuantity},
-                test: {testing}
+                test: {testing},
+                show: {toggleShowCart}
             }}>
             {props.children}
         </CartContext.Provider>

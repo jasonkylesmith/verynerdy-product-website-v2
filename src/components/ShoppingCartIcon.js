@@ -18,17 +18,17 @@ function ShoppingCartIcon(props) {
     return (
             <CartContext.Consumer>
                 {context => (
-
-                    <li className="nav-item">
-                        <a className="nav-link">
-                            <i className="fa fa-shopping-cart"></i>
-                            {/* {ShowNumOfItems(cart.cart.cart.length)} */}
-                            {ShowNumOfItems(context.cart.cart.cart.length)}
-                        </a>
-                        {/* <Button onClick={() => {
-                            context.add.addToCart({test2: "working"})
-                        }}>Click</Button> */}
-                    </li>
+                    <React.Fragment>
+                        <li className="nav-item">
+                            <Button className="nav-link"
+                                onClick={() => {
+                                    context.show.toggleShowCart();
+                                }}>
+                                <i className="fa fa-shopping-cart"></i>
+                                {ShowNumOfItems(context.cart.cart.cart.length)}
+                            </Button>
+                        </li>
+                    </React.Fragment>
 
 
                 )}

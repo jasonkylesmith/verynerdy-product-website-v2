@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationItem from './NavigationItem';
 import ShoppingCartIcon from './ShoppingCartIcon';
 
+
 class Navigation extends React.Component {
     constructor(props){
         super(props);
@@ -34,6 +35,7 @@ class Navigation extends React.Component {
                     <NavigationItem target="pre-order" />
                     <NavigationItem target="our story" />
                     <ShoppingCartIcon />
+                    
                     {/* <li className="nav-item">
                         <a className="nav-link">
                             <i class="fa fa-shopping-cart"></i>

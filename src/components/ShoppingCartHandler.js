@@ -29,6 +29,7 @@ class ShoppingCartHandler extends React.Component{
 
     addToCart(item){
         const newCart = this.state.cart;
+        
         newCart.push(item)
         this.updateCartState(newCart);
     }

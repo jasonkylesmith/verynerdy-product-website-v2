@@ -20,6 +20,23 @@ const ProductModal = (props) => {
 
     const cart = useContext(CartContext);
 
+    const [design, setDesign] = useState({
+        selectedDesign: props.product.options[0],
+    });
+
+    const handleInputChange = (event) => {
+        console.log("handleInputChange Called");
+        
+        const target = event.target;
+        const name = target.name;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        console.log(`Target: ${target}, Name: ${name}, Value: ${value}`);
+
+        setDesign({
+            [name]: value
+        });
+    }
+
     return (
         <div>
             <Button color="success" onClick={toggle}><i className="fa fa-cart-plus"></i></Button>
@@ -32,7 +49,7 @@ const ProductModal = (props) => {
                 <ModalBody className="collection-border p-4">
                     <Row>
                         <Col xs="12" lg="6">
-                            <img src={props.product.imgPath} className="img-fluid"/>
+                            <img src={props.product.imgPath} alt={props.product.imgAltText} className="img-fluid"/>
                         </Col>
                         <Col xs="12" lg="6">
                             <p>{props.product.flavorText}</p>
@@ -43,26 +60,28 @@ const ProductModal = (props) => {
                                     <Col xs="12" className="mb-3">
                                         <Label for="orderDesign">Design:</Label>
                                 
-                                        <Input type="select" name="orderDesign" id="orderDesign">
+                                        <Input type="select" name="selectedDesign" id="selectedDesign"
+                                            value={design.selectedDesign}
+                                            onChange={handleInputChange}>
                                             <option disabled defaultValue>Select</option>
                                             {options}
                                         </Input>
                                     </Col>
                                     <Col xs={{size: 10, offset:1}}>
                                         <Label check>
-                                            <Input type="checkbox" it="terms" name="terms" />{'I agree to the terms of service and will verify my shipping address at checkout.'}
+                                            <Input type="checkbox" id="terms" name="terms" />{'I agree to the terms of service and will verify my shipping address at checkout.'}
                                         </Label>
                                     </Col>
                                     <Col xs={{size: 10, offset:1}}>
                                         <Label check>
-                                            <Input type="checkbox" it="donate" name="donate" />{'I\'d like you to send me information on the organization you\'re donating to next!'}
+                                            <Input type="checkbox" id="donate" name="donate" />{'I\'d like you to send me information on the organization you\'re donating to next!'}
                                         </Label>
                                     </Col>
                                     <Col className="text-center mt-3" xs="12">
                                         <CartContext.Consumer>
                                             {context => (
                                                 <Button size="sm" color="success" onClick={() => {
-                                                    context.add.addToCart({test2:"working"})
+                                                    context.add.addToCart({...props.product, qty: 1, selectedDesign: design.selectedDesign})
                                                 }}>Add to Cart</Button>
                                                 
                                                 

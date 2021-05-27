@@ -13,9 +13,14 @@ To Do:
 - Aria accessability
 - Cart / Checkout Pages
     - Create Cart Page
-        - Layout
-        - Animate in and Out based on cart button
-        - AddItems
+        - Footer
+            - Style
+            - Checkout Button
+        - Items
+            - Style
+            - Adjust text at smaller screen sizes
+            - Add Remove and Increment / Decrement quantity functionality
+        - Use consistent X for close button
 
 
 Notes:
@@ -34,3 +39,8 @@ Completed:
     - Cart / Badge Navigation (5/23)
     - Setup Cart Context (5/23)
 - Newsletter Modal: Email Validation (5/25)
+- Cart / Checkout Pages
+    - Create Cart Page
+        - Layout (5/27)
+        - Animate in and Out based on cart button (5/27)
+        - AddItems (5/27)
