@@ -55,11 +55,13 @@ function ShoppingCartItem({ item }){
 function ShoppingCartSection(props) {
     
         let classes = "";
+        let bgClasses = "";
 
         if(props.show){
             classes = "shopping-cart-show";
         } else {
             classes = "shopping-cart-hide";
+            bgClasses = "cart-bg-hide"
         }
 
         console.log(props.show);
@@ -73,38 +75,43 @@ function ShoppingCartSection(props) {
         }
 
         return (
-            <Container className={`shopping-cart ${classes}`}>
-                {/* <div className="cart-button">
-                    Cart
-                </div> */}
-                <Row>
-                    <CartContext.Consumer>
-                        {context => (
-                            <React.Fragment>
-                                <Col xs={{size: 9, offset: 0}}>
-                                    <h3>Shopping Cart</h3>
-                                </Col>
-                                <Col xs={{size: 3, offset: 0}}>
-                                    <Button onClick={() => (
-                                        context.show.toggleShowCart()
-                                    )}>X</Button>
-                                </Col>
-                                <Col xs={{size: 12, offset: 0}}>
-                                    <DisplayShoppingCart items={context.cart.cart} />
-                                </Col>
-                                <Row className="cart-footer text-center">
-                                    <Col xs={12} lg={{size: 5, offset: 1}}>
-                                        Subtotal: ${calcSubtotal(context.cart.cart)}
+            <React.Fragment>
+                <div className={`cart-bg ${bgClasses}`}>
+
+                </div>
+                <Container className={`shopping-cart ${classes}`}>
+                    {/* <div className="cart-button">
+                        Cart
+                    </div> */}
+                    <Row>
+                        <CartContext.Consumer>
+                            {context => (
+                                <React.Fragment>
+                                    <Col xs={{size: 9, offset: 0}}>
+                                        <h4>Shopping Cart</h4>
                                     </Col>
-                                    <Col xs={12} lg={5}>
-                                        Checkout
+                                    <Col xs={{size: 3, offset: 0}} className="text-right">
+                                        <Button onClick={() => (
+                                            context.show.toggleShowCart()
+                                        )}>X</Button>
                                     </Col>
-                                </Row>
-                            </React.Fragment>
-                        )}
-                    </CartContext.Consumer>
-                </Row>
-            </Container>
+                                    <Col xs={{size: 12, offset: 0}} className="mt-3">
+                                        <DisplayShoppingCart items={context.cart.cart} />
+                                    </Col>
+                                    <Row className="cart-footer text-center">
+                                        <Col xs={12} lg={{size: 5, offset: 1}}>
+                                            Subtotal: ${calcSubtotal(context.cart.cart)}
+                                        </Col>
+                                        <Col xs={12} lg={5}>
+                                            Checkout
+                                        </Col>
+                                    </Row>
+                                </React.Fragment>
+                            )}
+                        </CartContext.Consumer>
+                    </Row>
+                </Container>
+            </React.Fragment>
         );
 
 }
