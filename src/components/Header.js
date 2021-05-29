@@ -41,7 +41,7 @@ class Header extends React.Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-5 offset-1 pl-0">
-                                <a href="index.html">
+                                <a href="/home">
                                     <img src="/assets/verynerdylogo.png" alt="" className="img-fluid"></img>
                                 </a>
                             </div>

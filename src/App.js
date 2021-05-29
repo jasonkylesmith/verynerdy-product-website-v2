@@ -1,10 +1,11 @@
 import './App.scss';
-import { ShoppingCartHandler } from './components/ShoppingCartHandler';
+import ShoppingCartSection from './components/ShoppingCartSection';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
-import { CartProvider } from './components/ShoppingCartContext'
+import { CartProvider, CartContext } from './components/ShoppingCartContext'
+
 
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
         <CartProvider>
           <Header />
           <Main />
+          <CartContext.Consumer>
+              {context => (
+                  <ShoppingCartSection show={context.cart.cart.showCart} />
+              )}
+          </CartContext.Consumer>
         </CartProvider>
         <Footer />
       </BrowserRouter>

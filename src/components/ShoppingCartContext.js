@@ -39,35 +39,39 @@ export const CartProvider = (props) => {
     function addToCart(item){
         const newCart = cart.cart;
 
-        newCart.push({...item, cartId: (cart.newCartId+1)});
+        newCart.push({...item, cartId: (cart.newCartId+1), qtyPrice: (item.qty * item.price)});
         
         setCart({...cart, cart: newCart, newCartId: cart.newCartId+1});
-        console.log(cart);
     }
 
     function removeFromCart(item){
         const newCart = cart.cart;
-        const itemIndex = newCart.findIndex(item.cartId);
+        const itemIndex = newCart.findIndex((product) => product.cartId === item.cartId);
         newCart.splice(itemIndex, 1);
-        
+        setCart({...cart, cart: newCart});
     }
 
     function changeQuantity(item, type, value){
         const newCart = cart.cart;
-        const itemIndex = newCart.findIndex(item.id);
+        const itemIndex = newCart.findIndex((product) => product.cartId === item.cartId);
 
         if(type === "set"){
-            newCart[itemIndex].quantity = value;
+            newCart[itemIndex].qty = value;
         }
         if(type === "add"){
-            newCart[itemIndex].quantity += value;
+            newCart[itemIndex].qty += value;
         }
         if(type === "subtract"){
-            newCart[itemIndex].quantity -= value;
+            newCart[itemIndex].qty -= value;
         }
-        if(newCart[itemIndex].quantity < 0){
-            newCart[itemIndex].quantity = 0;
+        if(newCart[itemIndex].qty < 0){
+            newCart[itemIndex].qty = 0;
         }
+
+        const newQtyPrice = newCart[itemIndex].qty * cart.cart[itemIndex].price;
+        newCart[itemIndex] = {...newCart[itemIndex], qtyPrice: newQtyPrice}
+        
+        setCart({...cart, cart: newCart});
     }
 
     function testing(){

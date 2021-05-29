@@ -1,6 +1,6 @@
 import React, { useState,useContext } from "react";
 import { CartContext } from './ShoppingCartContext';
-import { Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
+import { UncontrolledAlert, Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
 
 
 

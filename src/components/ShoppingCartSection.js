@@ -4,45 +4,108 @@ import { CartContext } from './ShoppingCartContext';
 
 function DisplayShoppingCart({ items }){
 
-    const cartItems = items.cart.map(item => {
-        return(<ShoppingCartItem item={item}/>)
+    const cartItems = items.cart.cart.cart.map(item => {
+        return(<ShoppingCartItem item={item} cart={items} key={item.cartId}/>)
     })
 
-    if(items.cart[0]){
-        return cartItems;
-    } else {
-        return <p>Your Shopping Cart is Empty</p>
+    function calcSubtotal({ cart }){
+        let subtotal = 0;
+        cart.forEach(item => (
+            subtotal += item.qtyPrice
+            ));
+        return subtotal;
     }
 
-    
+    function calcDonation(cart){
+        return ((calcSubtotal(cart) * .03).toFixed(2))
+    }
+
+    if(items.cart.cart.cart[0]){
+        return (
+            <React.Fragment>
+                <Col xs={{size: 12, offset: 0}} className="mt-3">
+                    {cartItems}
+                </Col>
+                <Row className="cart-footer p-4">
+                    <Col xs={12} md={8}>
+                        <Col xs={12} className="text-center text-md-left">
+                            <h4>Subtotal: ${calcSubtotal(items.cart.cart)}</h4>
+                        </Col>
+                        <Col xs={12} className="text-center text-md-left">
+                            Potential Donation: ${calcDonation(items.cart.cart)}
+                        </Col>
+                    </Col>
+                    <Col  xs={12} md={4} className="text-center pr-4">
+                        <Button color="primary" className="btn mt-3 mt-md-0">Checkout</Button>
+                    </Col>
+                </Row>
+
+
+
+            </React.Fragment>
+            );
+    } else {
+        return (
+            <Col xs={{size: 12, offset: 0}} className="mt-3">
+                <p>Your Shopping Cart is Empty</p>
+            </Col>
+        )
+    }  
 }
 
-function ShoppingCartItem({ item }){
+function DisplayQty({ item, action }){
+
+    return (
+        <Col xs={12} md={4} className="text-center d-flex align-items-center justify-content-center">
+            <Button onClick={() => {
+                action.changeQuantity(item, "subtract", 1);
+            }} className="btn-outline btn-sm p-1">&minus;</Button> 
+            
+            <span className="px-2"> Qty: {item.qty} </span>
+            
+            <Button onClick={() => {
+                action.changeQuantity(item, "add", 1);
+            }} className="btn-outline btn-sm p-1">&#43;</Button>
+        </Col>
+    )
+}
+
+function ShoppingCartItem({ item, cart }){
+
+    function calcPrice(price, qty){
+        return price * qty;
+    }
+
+    if(item.qty === 0){
+        cart.remove.removeFromCart(item);
+    }
+
     return (
         <React.Fragment>
-            <Container className="my-4 p-2 border">
+            <Container className="cart-item">
                 <Row>
-                    <Col xs={3} lg={4}>
+                    <Col xs={12} md={4}>
                         <img src={item.imgPath} alt={item.imgAltText} className="img-fluid" />
                     </Col>
-                    <Col xs={6} lg={6}>
+                    <Col xs={9} md={6}>
                         <h5>{item.title}</h5>
                         <h6>{item.subTitle}</h6>
-                        <span>{item.selectedDesign}</span>
+                        
                     </Col>
-                    <Col xs={3} lg={2} className="text-right">
-                        X
+                    <Col xs={3} md={2} className="text-right">
+                        <Button className="no-style close"
+                            onClick={() => {
+                                cart.remove.removeFromCart(item)
+                            }}>&times;</Button>
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={3} lg={4} className="text-center">
-                        - X +
+                    <DisplayQty item={item} action={cart.change} />
+                    <Col xs={9} md={6} className="d-flex align-items-center">
+                        <span>{item.selectedDesign}</span>
                     </Col>
-                    <Col xs={6} lg={6}>
-                        
-                    </Col>
-                    <Col xs={3} lg={2} className="text-right">
-                    <span>{item.price}</span>
+                    <Col xs={3} md={2} className="d-flex align-items-center justify-content-end">
+                        <span className="price">${calcPrice(item.price, item.qty)}</span>
                     </Col>
                 </Row>
             </Container>
@@ -64,53 +127,41 @@ function ShoppingCartSection(props) {
             bgClasses = "cart-bg-hide"
         }
 
-        console.log(props.show);
-
-        function calcSubtotal({ cart }){
-            let subtotal = 0;
-            cart.forEach(item => (
-                subtotal += Number(item.price.replace('$', ''))
-                ));
-            return subtotal;
-        }
-
         return (
             <React.Fragment>
                 <div className={`cart-bg ${bgClasses}`}>
 
                 </div>
-                <Container className={`shopping-cart ${classes}`}>
-                    {/* <div className="cart-button">
-                        Cart
-                    </div> */}
-                    <Row>
-                        <CartContext.Consumer>
-                            {context => (
-                                <React.Fragment>
-                                    <Col xs={{size: 9, offset: 0}}>
-                                        <h4>Shopping Cart</h4>
-                                    </Col>
-                                    <Col xs={{size: 3, offset: 0}} className="text-right">
-                                        <Button onClick={() => (
-                                            context.show.toggleShowCart()
-                                        )}>X</Button>
-                                    </Col>
-                                    <Col xs={{size: 12, offset: 0}} className="mt-3">
-                                        <DisplayShoppingCart items={context.cart.cart} />
-                                    </Col>
-                                    <Row className="cart-footer text-center">
-                                        <Col xs={12} lg={{size: 5, offset: 1}}>
-                                            Subtotal: ${calcSubtotal(context.cart.cart)}
-                                        </Col>
-                                        <Col xs={12} lg={5}>
-                                            Checkout
-                                        </Col>
-                                    </Row>
-                                </React.Fragment>
-                            )}
-                        </CartContext.Consumer>
-                    </Row>
-                </Container>
+                
+                    <Container className={`shopping-cart m-0 px-3 ${classes}`}>
+                        
+
+                            
+                                <Row className="py-3">
+                                    <CartContext.Consumer>
+                                        {context => (
+                                            <React.Fragment>
+                                                <Col xs={{size: 9, offset: 0}}>
+                                                    <h4>Shopping Cart</h4>
+                                                </Col>
+                                                <Col xs={{size: 3, offset: 0}} className="text-right">
+                                                    <Button 
+                                                    className="no-style text-black-50 close"
+                                                    onClick={() => (
+                                                        context.show.toggleShowCart()
+                                                    )}>&times;</Button>
+                                                </Col>
+                                                
+                                                <DisplayShoppingCart items={context} />
+            
+                                            </React.Fragment>
+                                        )}
+                                    </CartContext.Consumer>
+                                </Row>
+                            
+                        
+                    </Container>
+                
             </React.Fragment>
         );
 

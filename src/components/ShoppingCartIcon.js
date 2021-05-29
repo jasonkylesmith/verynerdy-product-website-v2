@@ -12,15 +12,13 @@ function ShowNumOfItems(length){
 }
 
 function ShoppingCartIcon(props) {
-    const cart = useContext(CartContext);
-    console.log(cart.cart.cart.length);
 
     return (
             <CartContext.Consumer>
                 {context => (
                     <React.Fragment>
                         <li className="nav-item">
-                            <Button className="nav-link"
+                            <Button className="nav-link no-style"
                                 onClick={() => {
                                     context.show.toggleShowCart();
                                 }}>

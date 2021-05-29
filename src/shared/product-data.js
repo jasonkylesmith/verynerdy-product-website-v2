@@ -11,7 +11,7 @@ export const PRODUCT_DATA = [
         options: [
             "One size fits all"
         ],
-        price: "$25"
+        price: 25
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ export const PRODUCT_DATA = [
             "L - White/Black", 
             "XL - White/Black"
         ],
-        price: "$30"
+        price: 30
     },
     {
         id: 3,
@@ -46,7 +46,7 @@ export const PRODUCT_DATA = [
             "4 in. x 4 in.", 
             "5.5 in. x 5.5 in."
         ],
-        price: "$4"
+        price: 4
     },
     {
         id: 4,
@@ -63,7 +63,7 @@ export const PRODUCT_DATA = [
             "L", 
             "XL",
         ],
-        price: "$25"
+        price: 25
     },
     {
         id: 5,
@@ -79,7 +79,7 @@ export const PRODUCT_DATA = [
             "L", 
             "XL"
         ],
-        price: "$25"
+        price: 25
     },
     {
         id: 6,
@@ -93,9 +93,9 @@ export const PRODUCT_DATA = [
             "Alien", 
             "Android", 
             "Wizard", 
-            "Combo Pack (All Three for $45)"
+            "Combo Pack (All Three for 45)"
         ],
-        price: "$18"
+        price: 18
     }
 
 ];

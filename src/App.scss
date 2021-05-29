@@ -161,9 +161,9 @@ header {
     }
 }
 
-button.nav-link {
+button.no-style {
     border: none;
-    background-color: rgba(255,255,255,0);
+    background-color: rgba(255,255,255,0)!important;
 }
 
 .nav-link {
@@ -174,33 +174,45 @@ button.nav-link {
     color:var(--primary)!important;
 }
 
+.blank{
+    background-color: rgba(255,255,255,0);
+    height: 100vh;
+    width: 100%;
+}
+
+.shopping-cart-wrapper {
+    background-color: rgba(255,255,255,1);
+    border-left: .5rem solid $primary;
+    height: 100vh;
+}
+
 .shopping-cart {
     position: fixed;
     right: 0;
     top: 0;
-    padding-top: 1rem;
+    padding-top: 0rem;
     height: 100vh;
     width: 40vw;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
+    border-left: .5rem solid $primary;
     z-index: 4000;
     opacity: 1;
     transition: right 250ms ease-in-out,
                 box-shadow 150ms ease-in-out;
-    border-left: .5rem solid $primary;
-/*     -webkit-box-shadow: -50px 0px 0px 50px rgba(0,0,0,0.5); 
-    box-shadow: -40vw 0px 0px 50vw rgba(0,0,0,0.5); */
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+
 }
 
 .shopping-cart-hide{
-    right: -40vw;
+    right: -100vw;
     box-shadow: none;
 }
 
 @media (max-width: 992px) {
     .shopping-cart {
         width: 80vw;
-        -webkit-box-shadow: -15vw 0px 0px 15vw rgba(0,0,0,0.5); 
-        box-shadow: -15vw 0px 0px 15vw rgba(0,0,0,0.5);
     }
 
     .shopping-cart-hide {
@@ -210,18 +222,34 @@ button.nav-link {
 }
 
 .cart-button{
-    position: absolute;
-    left: 0px;
-    top: 50vh;
-    border: 2px solid orange;
+    position: fixed;
+    right: calc(39.5vw);
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border: .5rem solid $primary;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,1);
+    z-index: 4000;
+}
+
+.cart-item {
+    border-top: 2px solid rgba(0,0,0,.2);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transform: scale(.9);
+}
+
+.cart-item:last-of-type {
+    border-bottom: 2px solid rgba(0,0,0,.2);
 }
 
 .cart-footer{
-    position: absolute;
+    position: relative;
     margin: 0;
     bottom: 0;
     width: 100%;
-    border: 2px solid pink;
+    /* border-top: 2px solid black; */
 }
 
 .cart-bg{

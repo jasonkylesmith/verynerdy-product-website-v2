@@ -13,14 +13,9 @@ To Do:
 - Aria accessability
 - Cart / Checkout Pages
     - Create Cart Page
-        - Footer
-            - Style
-            - Checkout Button
         - Items
-            - Style
+
             - Adjust text at smaller screen sizes
-            - Add Remove and Increment / Decrement quantity functionality
-        - Use consistent X for close button
 
 
 Notes:
@@ -44,3 +39,10 @@ Completed:
         - Layout (5/27)
         - Animate in and Out based on cart button (5/27)
         - AddItems (5/27)
+        - Footer (5/28)
+            - Style (5/28)
+            - Checkout Button (5/28)
+        - Items (5/28)
+            - Style (5/28)
+            - Add Remove and Increment / Decrement quantity functionality (5/28)
+        - Use consistent X for close button (5/28)
