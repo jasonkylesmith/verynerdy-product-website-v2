@@ -1,5 +1,4 @@
 import React from 'react';
-import { FAQ_DATA } from '../shared/faq-data';
 
 
 

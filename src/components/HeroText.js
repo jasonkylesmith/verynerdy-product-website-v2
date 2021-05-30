@@ -1,5 +1,4 @@
 import React from 'react';
-import NewsletterButton from './NewsletterButton';
 import NewsletterModal from './NewsletterModal';
 
 class HeroText extends React.Component {

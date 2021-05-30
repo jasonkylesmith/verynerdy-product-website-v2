@@ -166,6 +166,12 @@ button.no-style {
     background-color: rgba(255,255,255,0)!important;
 }
 
+button.no-style:focus, button.no-style:active {
+    outline: none!important;
+    border: none!important;
+    box-shadow: none!important;
+}
+
 .nav-link {
     color:black!important;
 }
@@ -192,7 +198,7 @@ button.no-style {
     top: 0;
     padding-top: 0rem;
     height: 100vh;
-    width: 40vw;
+    width: 100%;
     background-color: rgba(255, 255, 255, 1);
     border-left: .5rem solid $primary;
     z-index: 4000;
@@ -210,13 +216,35 @@ button.no-style {
     box-shadow: none;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 768px) {
     .shopping-cart {
-        width: 80vw;
+        width: 100vw;
     }
 
     .shopping-cart-hide {
-        right: -80vw;
+        right: -100vw;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .shopping-cart {
+        width: 70vw;
+    }
+
+    .shopping-cart-hide {
+        right: -100vw;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .shopping-cart {
+        width: 40vw;
+    }
+
+    .shopping-cart-hide {
+        right: -100vw;
         box-shadow: none;
     }
 }
@@ -238,7 +266,26 @@ button.no-style {
     padding-top: 1rem;
     padding-bottom: 1rem;
     transform: scale(.9);
+
+    .price {
+        font-size: 2rem;
+    }
 }
+
+.qty-btn {
+    background-color: rgba(0,0,0,0);
+    color: $secondary;
+    width: 4ch;
+    height: 4ch;
+}
+
+.qty-btn:hover {
+    background-color: $success;
+    color: white;
+    border-color: $success;
+}
+
+
 
 .cart-item:last-of-type {
     border-bottom: 2px solid rgba(0,0,0,.2);
@@ -347,6 +394,16 @@ button.no-style {
     }
 }
 
+.product-header {
+    font-size: 2rem;
+}
+
+.product-subheader {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
 .price {
     color: rgb(0, 173, 0);
     font-weight:700;
@@ -355,6 +412,14 @@ button.no-style {
 .card-footer i {
     font-size: 1.6rem;
     margin: .1rem;
+
+    
+}
+
+.card-footer {
+    .price {
+        margin: 0;
+    }
 }
 
 #preorder {
@@ -370,6 +435,7 @@ button.no-style {
         transform: scale(1.025);
         -webkit-box-shadow: .1rem .1rem .8rem .01rem rgba(0,0,0,0.2); 
         box-shadow:         .1rem .1rem .8rem .01rem rgba(0,0,0,0.2);
+        cursor:pointer;
     }
 }
 
@@ -498,4 +564,6 @@ footer {
     }
 }
 
-
+.stop-scrolling {
+    overflow: hidden;
+}

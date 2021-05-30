@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import NewsletterButton from './NewsletterButton';
 import {
     Carousel,
     CarouselItem,

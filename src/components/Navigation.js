@@ -17,7 +17,7 @@ class Navigation extends React.Component {
         } else {
             this.state = {
                 navClasses: `collapse navbar-expand navbar-collapse d-flex justify-content-center p-0`,
-                ulClasses: "navbar-nav",
+                ulClasses: "navbar-nav align-items-center",
                 navId: "mobileNavbar"
             }
         }

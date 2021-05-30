@@ -38,7 +38,7 @@ class Header extends React.Component {
         console.log("Header rendered: " + this.state.show);
         return (
                 <header className="pb-2 pb-lg-3 pt-3 sticky-top bg-light" id="header">
-                    <div className="container">
+                    <div className="container-fluid">
                         <div className="row align-items-center">
                             <div className="col-5 offset-1 pl-0">
                                 <a href="/home">

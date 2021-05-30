@@ -1,14 +1,23 @@
-import React, { useState,useContext } from "react";
+import React, { useState } from "react";
 import { CartContext } from './ShoppingCartContext';
-import { UncontrolledAlert, Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
-
-
+import { Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
 
 
 const ProductModal = (props) => {
+    
+    
+    
     const [modal, setModal] = useState(false);
 
-    const toggle = () => setModal(!modal);
+    const toggle = () => {
+        setModal(!modal);
+        toggleModal();
+    }
+
+    const toggleModal = () => {
+        props.action();
+        console.log(props);
+    }
 
     const options = props.product.options.map(option => {
         return (
@@ -17,8 +26,6 @@ const ProductModal = (props) => {
             </option>
         );
     })
-
-    const cart = useContext(CartContext);
 
     const [design, setDesign] = useState({
         selectedDesign: props.product.options[0],
@@ -39,12 +46,12 @@ const ProductModal = (props) => {
 
     return (
         <div>
-            <Button color="success" onClick={toggle}><i className="fa fa-cart-plus"></i></Button>
-            <Modal isOpen={modal} size="lg" centered toggle={toggle}>
+            {/* <Button color="success" onClick={toggle} className="btn-sm">Add <i className="fa fa-cart-plus"></i></Button> */}
+          
+            <Modal isOpen={props.toggle} size="lg" centered toggle={toggle}>
                 <ModalHeader className="p-4" toggle={toggle}>
-                   {props.product.title}
-                   <br />
-                   <span className="small">{props.product.subTitle}</span>
+                   <span className="product-header d-block">{props.product.title}</span>
+                   <span className="product-subheader">{props.product.subTitle}</span>
                 </ModalHeader>
                 <ModalBody className="collection-border p-4">
                     <Row>
@@ -76,18 +83,7 @@ const ProductModal = (props) => {
                                         <Label check>
                                             <Input type="checkbox" id="donate" name="donate" />{'I\'d like you to send me information on the organization you\'re donating to next!'}
                                         </Label>
-                                    </Col>
-                                    <Col className="text-center mt-3" xs="12">
-                                        <CartContext.Consumer>
-                                            {context => (
-                                                <Button size="sm" color="success" onClick={() => {
-                                                    context.add.addToCart({...props.product, qty: 1, selectedDesign: design.selectedDesign})
-                                                }}>Add to Cart</Button>
-                                                
-                                                
-                                            )}
-                                        </CartContext.Consumer>
-                                    </Col>          
+                                    </Col>         
                                 </FormGroup>
                             </Form>
                         </Col>
@@ -97,8 +93,23 @@ const ProductModal = (props) => {
                     <Form>
                         <FormGroup row>
                             <Col className="text-center" xs="12">
-                                <Button size="sm" color="primary" outline className="m-1">Continue Shopping</Button>
-                                <Button size="sm" color="primary" className="m-1">Checkout</Button>
+                                <Button size="sm" color="primary" outline className="m-1"
+                                    onClick={() => {
+                                        props.action()
+                                    }}>
+                                        Continue Shopping
+                                    </Button>
+                                
+                                <CartContext.Consumer>
+                                            {context => (
+                                                <Button size="sm" color="success" onClick={() => {
+                                                    context.add.addToCart({...props.product, qty: 1, selectedDesign: design.selectedDesign})
+                                                    props.action()
+                                                }}>Add to Cart</Button>
+                                                
+                                                
+                                            )}
+                                        </CartContext.Consumer>
                             </Col>
                         </FormGroup>
                     </Form>

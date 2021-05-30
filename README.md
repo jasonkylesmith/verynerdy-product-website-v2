@@ -3,19 +3,14 @@ The Very Nerdy Clothing Company site is a front-end example of a pre-order merch
 
 To Do:
 
-
-
-- Product Card
-    - Remove social share buttons
-    - Size button and add "Add to Cart" text on all but smallest of screens
+- Third Row of Products?
 - Product Modal
     - Add tab navigation for sizing?
 - Aria accessability
 - Cart / Checkout Pages
-    - Create Cart Page
-        - Items
-
-            - Adjust text at smaller screen sizes
+    - Mock Checkout Page
+- Refactor / Organization of Components and CSS
+            
 
 
 Notes:
@@ -45,4 +40,8 @@ Completed:
         - Items (5/28)
             - Style (5/28)
             - Add Remove and Increment / Decrement quantity functionality (5/28)
+            - Adjust text at smaller screen sizes (5/29)
         - Use consistent X for close button (5/28)
+- Product Card (5/29)
+    - Remove social share buttons (5/29)
+    - Size button and add "Add to Cart" text on all but smallest of screens (5/29)

@@ -8,7 +8,7 @@ class ToTopButton extends React.Component {
     render(){
         return(
             <div className="top-button">
-                <a href="#"><i className="fa fa-chevron-up p-1 mr-1 mb-2"></i></a>
+                <a href="/home#"><i className="fa fa-chevron-up p-1 mr-1 mb-2"></i></a>
             </div>
         )
     }

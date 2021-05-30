@@ -68,10 +68,10 @@ export const PRODUCT_DATA = [
     {
         id: 5,
         title: "WASD",
-        subTitle: "T-Shirt",
+        subTitle: "Classic T-Shirt",
         imgPath: "/assets/wasd-tshirt.png", 
         imgAltText: "WASD T-Shirt",
-        flavorText: "Gamers know the power of WASD. True gamers know that W is the most important of them all.",
+        flavorText: "Gamers know the power of WASD. True gamers know that W is the most important of them all. Why else would it stand alone, at the top?",
         specText: "The American Apparel 2001 is the classic t-shirt. Its fine jersey cotton construction makes it extremely soft and comfortable to wear, so it's a good choice for a day-to-day outfit. It's durable and retains its shape and color after washing.",
         options: [
             "S", 

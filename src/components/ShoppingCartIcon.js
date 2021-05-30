@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {CartContext} from './ShoppingCartContext';
 import {Badge, Button} from 'reactstrap';
 

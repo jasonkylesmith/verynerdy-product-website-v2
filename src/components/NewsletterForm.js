@@ -25,14 +25,16 @@ class NewsletterForm extends Component {
             email: ''
         }
 
+        const emailRegex = /^^[A-Za-z0-9+_`-]+[@][A-Za-z0-9][A-Za-z0-9-]+[A-Za-z0-9][.][A-Za-z]+/;
+
         if(this.state.touched.name){
             if(name.length < 2) {
                 errors.name = "Name must be at least 2 characters.";
             }
         }
 
-        if(this.state.touched.email && !email.includes('@')){
-            errors.email = "Email should contain an @ symbol."
+        if(this.state.touched.email && !emailRegex.test(email)){
+            errors.email = "Must be a valid email address."
         }
 
         return errors;
@@ -55,7 +57,7 @@ class NewsletterForm extends Component {
     }
 
     handleSubmit(event){
-        alert("Thanks for trying, but this form is not yet functional");
+        alert("Apologies, our newsletter is not setup at this time.");
         console.log("Thanks for trying, but this form is not yet functional");
         event.preventDefault();
     }
@@ -63,7 +65,6 @@ class NewsletterForm extends Component {
 
     render(){
         const errors = this.validate(this.state.name, this.state.email);
-        console.log(this.state.agree);
 
         return (
             <Form onSubmit={this.handleSubmit}>
@@ -91,7 +92,7 @@ class NewsletterForm extends Component {
                     <Label check>
                         <Input type="checkbox"
                             name="agree"
-                            checked={this.state.agree}
+                            invalid={errors.agree}
                             onChange={this.handleInputChange} /> {' I agree to receive periodic emails from The Very Nerdy Clothing Company.'}
                     </Label>
                 </FormGroup>

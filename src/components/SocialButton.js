@@ -1,25 +1,6 @@
 import React from 'react';
 
 
-/* class SocialButton extends React.Component{
-    constructor(props){
-        super(props);
-
-        
-
-    }
-
-    render(){
-        return (
-            <a>
-                <i className="fa fa-facebook-square"></i>
-            </a>
-        )
-    }
-
-} */
-
-
 function SocialButton ({shareType}) {
     let classes = "fa ";
     switch(shareType) {
