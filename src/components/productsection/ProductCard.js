@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialButton from './SocialButton';
+import SocialButton from '../utilities/SocialButton';
 import ProductModal from './ProductModal';
 
 class ProductCard extends React.Component {

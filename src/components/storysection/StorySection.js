@@ -1,6 +1,6 @@
 import React from 'react';
 import StoryCoreItem from './StoryCoreItem';
-import { STORY_DATA } from '../shared/story-data';
+import { STORY_DATA } from '../../shared/story-data';
 
 class StorySection extends React.Component {
     constructor(props){

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from './Navigation';
+import Navigation from '../navigation/Navigation';
 
 
 class Header extends React.Component {
@@ -41,7 +41,7 @@ class Header extends React.Component {
                     <div className="container-fluid">
                         <div className="row align-items-center">
                             <div className="col-5 offset-1 pl-0">
-                                <a href="/home">
+                                <a href="/home#">
                                     <img src="/assets/verynerdylogo.png" alt="" className="img-fluid"></img>
                                 </a>
                             </div>

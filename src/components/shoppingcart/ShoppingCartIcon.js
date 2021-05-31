@@ -1,5 +1,5 @@
 import React from 'react';
-import {CartContext} from './ShoppingCartContext';
+import {CartContext} from '../main/ShoppingCartContext';
 import {Badge, Button} from 'reactstrap';
 
 function ShowNumOfItems(length){

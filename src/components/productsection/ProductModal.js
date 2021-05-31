@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CartContext } from './ShoppingCartContext';
+import { CartContext } from '../main/ShoppingCartContext';
 import { Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, Input, FormGroup, Form } from 'reactstrap';
 
 

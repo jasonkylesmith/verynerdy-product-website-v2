@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationItem from './NavigationItem';
-import ShoppingCartIcon from './ShoppingCartIcon';
+import ShoppingCartIcon from '../shoppingcart/ShoppingCartIcon';
 
 
 class Navigation extends React.Component {

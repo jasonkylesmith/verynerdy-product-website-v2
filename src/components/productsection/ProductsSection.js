@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard'
-import { PRODUCT_DATA } from '../shared/product-data';
+import { PRODUCT_DATA } from '../../shared/product-data';
 
 class ProductsSection extends React.Component {
     constructor(props){

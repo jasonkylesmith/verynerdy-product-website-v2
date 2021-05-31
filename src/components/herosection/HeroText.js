@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsletterModal from './NewsletterModal';
+import NewsletterModal from '../newsletter/NewsletterModal';
 
 class HeroText extends React.Component {
     constructor(props){

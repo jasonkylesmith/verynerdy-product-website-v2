@@ -1,9 +1,9 @@
 import React from 'react';
-import HeroSection from './HeroSection';
-import ProductsSection from './ProductsSection';
-import StorySection from './StorySection';
-import Divider from './Divider';
-import ToTopButton from './ToTopButton';
+import HeroSection from '../herosection/HeroSection';
+import ProductsSection from '../productsection/ProductsSection';
+import StorySection from '../storysection/StorySection';
+import Divider from '../utilities/Divider';
+import ToTopButton from '../utilities/ToTopButton';
 
 
 

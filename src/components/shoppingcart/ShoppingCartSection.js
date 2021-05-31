@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 import {Container, Row, Col, Button} from 'reactstrap';
-import { CartContext } from './ShoppingCartContext';
+import { CartContext } from '../main/ShoppingCartContext';
 
 function DisplayShoppingCart({ items }){
 

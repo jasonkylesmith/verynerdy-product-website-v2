@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './Home';
-import TOS from './TOS';
-import FAQ from './FAQ';
-import Donations from './Donations';
+import Home from '../pages/Home';
+import TOS from '../pages/TOS';
+import FAQ from '../pages/FAQ';
+import Donations from '../pages/Donations';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { FAQ_DATA } from '../shared/faq-data';
+import { FAQ_DATA } from '../../shared/faq-data';
 
 class Main extends React.Component {
     constructor(props){
