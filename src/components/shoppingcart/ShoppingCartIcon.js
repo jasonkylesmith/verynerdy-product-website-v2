@@ -2,7 +2,7 @@ import React from 'react';
 import {CartContext} from '../main/ShoppingCartContext';
 import {Badge, Button} from 'reactstrap';
 
-function ShowNumOfItems(length){
+function showNumOfItems(length){
     if(length>0){
         // Show number icon
         return (
@@ -11,7 +11,7 @@ function ShowNumOfItems(length){
     }
 }
 
-function ShoppingCartIcon(props) {
+function ShoppingCartIcon() {
 
     return (
             <CartContext.Consumer>
@@ -23,7 +23,7 @@ function ShoppingCartIcon(props) {
                                     context.show.toggleShowCart();
                                 }}>
                                 <i className="fa fa-shopping-cart"></i>
-                                {ShowNumOfItems(context.cart.cart.cart.length)}
+                                {showNumOfItems(context.cart.cart.cart.length)}
                             </Button>
                         </li>
                     </React.Fragment>

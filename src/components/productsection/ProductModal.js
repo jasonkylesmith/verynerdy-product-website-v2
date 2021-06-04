@@ -5,8 +5,7 @@ import { Col, Row, Modal, Button, ModalHeader, ModalBody, ModalFooter, Label, In
 
 const ProductModal = (props) => {
     
-    
-    
+    // State for modal
     const [modal, setModal] = useState(false);
 
     const toggle = () => {
@@ -14,11 +13,30 @@ const ProductModal = (props) => {
         toggleModal();
     }
 
+    // Toggles modal
     const toggleModal = () => {
-        props.action();
-        console.log(props);
+        props.toggleModal();
     }
 
+    // State for design options
+    const [design, setDesign] = useState({
+        selectedDesign: props.product.options[0],
+    });
+
+    // Handles changing inputs
+    const handleInputChange = (event) => {
+        // Gets value of selection
+        const target = event.target;
+        const name = target.name;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+
+        // Sets value of selection to state
+        setDesign({
+            [name]: value
+        });
+    }
+
+    // Creates list of options by mapping through data from PRODUCT_DATA passed via props
     const options = props.product.options.map(option => {
         return (
             <option key={option} value={option}>
@@ -27,44 +45,25 @@ const ProductModal = (props) => {
         );
     })
 
-    const [design, setDesign] = useState({
-        selectedDesign: props.product.options[0],
-    });
-
-    const handleInputChange = (event) => {
-        console.log("handleInputChange Called");
-        
-        const target = event.target;
-        const name = target.name;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        console.log(`Target: ${target}, Name: ${name}, Value: ${value}`);
-
-        setDesign({
-            [name]: value
-        });
-    }
-
     return (
-        <div>
-            {/* <Button color="success" onClick={toggle} className="btn-sm">Add <i className="fa fa-cart-plus"></i></Button> */}
-          
+        <div>          
             <Modal isOpen={props.toggle} size="lg" centered toggle={toggle}>
                 <ModalHeader className="p-4" toggle={toggle}>
                    <span className="product-header d-block">{props.product.title}</span>
                    <span className="product-subheader">{props.product.subTitle}</span>
                 </ModalHeader>
-                <ModalBody className="collection-border p-4">
+                <ModalBody className="collection-border p-lg-4 px-4 py-2">
                     <Row>
-                        <Col xs="12" lg="6">
+                        <Col xs="12" lg="4" className="text-center">
                             <img src={props.product.imgPath} alt={props.product.imgAltText} className="img-fluid"/>
                         </Col>
-                        <Col xs="12" lg="6">
+                        <Col xs="12" lg="8">
                             <p>{props.product.flavorText}</p>
                             <p>{props.product.specText}</p>
                         
                             <Form>
                                 <FormGroup row>
-                                    <Col xs="12" className="mb-3">
+                                    <Col xs="12">
                                         <Label for="orderDesign">Design:</Label>
                                 
                                         <Input type="select" name="selectedDesign" id="selectedDesign"
@@ -73,17 +72,7 @@ const ProductModal = (props) => {
                                             <option disabled defaultValue>Select</option>
                                             {options}
                                         </Input>
-                                    </Col>
-                                    <Col xs={{size: 10, offset:1}}>
-                                        <Label check>
-                                            <Input type="checkbox" id="terms" name="terms" />{'I agree to the terms of service and will verify my shipping address at checkout.'}
-                                        </Label>
-                                    </Col>
-                                    <Col xs={{size: 10, offset:1}}>
-                                        <Label check>
-                                            <Input type="checkbox" id="donate" name="donate" />{'I\'d like you to send me information on the organization you\'re donating to next!'}
-                                        </Label>
-                                    </Col>         
+                                    </Col>        
                                 </FormGroup>
                             </Form>
                         </Col>
@@ -95,7 +84,7 @@ const ProductModal = (props) => {
                             <Col className="text-center" xs="12">
                                 <Button size="sm" color="primary" outline className="m-1"
                                     onClick={() => {
-                                        props.action()
+                                        props.toggleModal()
                                     }}>
                                         Continue Shopping
                                     </Button>
@@ -104,7 +93,7 @@ const ProductModal = (props) => {
                                             {context => (
                                                 <Button size="sm" color="success" onClick={() => {
                                                     context.add.addToCart({...props.product, qty: 1, selectedDesign: design.selectedDesign})
-                                                    props.action()
+                                                    props.toggleModal()
                                                 }}>Add to Cart</Button>
                                                 
                                                 

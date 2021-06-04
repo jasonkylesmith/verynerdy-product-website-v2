@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard'
 import { PRODUCT_DATA } from '../../shared/product-data';
+import {FadeTransform} from 'react-animation-components';
 
 class ProductsSection extends React.Component {
     constructor(props){
@@ -11,6 +12,7 @@ class ProductsSection extends React.Component {
     }
 
     render(){
+        // Generates ProductCards by mapping through each item in PRODUCT_DATA via state
         const cards = this.state.products.map(product => {
             return (
                 <ProductCard key={product.id} product={product} />
@@ -24,15 +26,15 @@ class ProductsSection extends React.Component {
                     <h2 className="">Behold! Our Exclusive Pre-Order Collection</h2>
                     <p className="text-muted">Some of these pre-order designs will only be offered for a limited time! Once we launch, we're giving them the snap and they go the way of the blip!</p>
                 </div>
+                <FadeTransform in transformProps={{
+                    enterTransform: 'scale(1.0)'
+                    }}>
                 <div className="row justify-content-around">
-
-                    {cards}
                     
-
-                    {/* <ProductCard product={this.state.products[0]} /> */}
-
-
+                        {cards}
+                    
                 </div>
+                </FadeTransform>
             </main>
         )
     }

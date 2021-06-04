@@ -4,7 +4,7 @@ export const PRODUCT_DATA = [
         id: 1,
         title: "The Big Three",
         subTitle: "SE Dark Mode Hat",
-        imgPath: "/assets/thebigthree-specialeditiondarkmode-cottonhat-200.jpg",
+        imgPath: "/assets/thebigthree-specialeditiondarkmode-cottonhat.jpg",
         imgPathSmall: "/assets/thebigthree-specialeditiondarkmode-cottonhat-200.jpg",
         imgAltText: "The Big Three Special Edition Darkmode Cotton Hat",
         flavorText: "Hey you! This cloth hat is ONLY available during the pre-order, so you'd definitely better get on it!",

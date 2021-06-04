@@ -7,13 +7,14 @@ class Navigation extends React.Component {
     constructor(props){
         super(props);
 
-
+        // If navType is standard, include all the classes for the normal full page nagivation
         if(this.props.navType === "standard"){
             this.state = {
                 navClasses: "navbar navbar-expand col pt-0 pr-0 d-none d-md-block",
                 ulClasses: "navbar-nav justify-content-end",
                 navId: ""
             }
+        // Otherwise, include all the classes for the mobile navigation
         } else {
             this.state = {
                 navClasses: `collapse navbar-expand navbar-collapse d-flex justify-content-center p-0`,
@@ -26,7 +27,6 @@ class Navigation extends React.Component {
 
 
     render(){
-        /* const classes = this.state.navClasses + " " + this.props.showMenu; */
 
         const classes = `${this.state.navClasses}`;
         return (
@@ -35,12 +35,6 @@ class Navigation extends React.Component {
                     <NavigationItem target="pre-order" />
                     <NavigationItem target="our story" />
                     <ShoppingCartIcon />
-                    
-                    {/* <li className="nav-item">
-                        <a className="nav-link">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-                    </li> */}
                 </ul>
             </nav>
         )

@@ -78,6 +78,24 @@ header {
     }
 }
 
+.page-enter {
+    opacity: 0;
+}
+
+.page-enter-active {
+    opacity: 1;
+    transition: all 500ms ease-out;
+}
+
+.page-exit {
+    opacity: 1;
+}
+
+.page-exit-active {
+    opacity: 0;
+    transition: all 500ms ease-in;
+}
+
 .hamburger-wrapper {
     position: relative;
     height: 30px;
@@ -203,7 +221,7 @@ button.no-style:focus, button.no-style:active {
     border-left: .5rem solid $primary;
     z-index: 4000;
     opacity: 1;
-    transition: right 250ms ease-in-out,
+    transition: right 500ms ease-out,
                 box-shadow 150ms ease-in-out;
     
     overflow-y: scroll;
@@ -269,23 +287,35 @@ button.no-style:focus, button.no-style:active {
 
     .price {
         font-size: 2rem;
+        color: black;
     }
 }
 
-.qty-btn {
-    background-color: rgba(0,0,0,0);
-    color: $secondary;
+.qty-btn, .qty-btn:active {
+    background-color: rgba(0,0,0,0)!important;
+    color: $secondary!important;
     width: 4ch;
     height: 4ch;
 }
 
-.qty-btn:hover {
-    background-color: $success;
-    color: white;
+.qty-btn:hover, .qty-btn:focus {
+    background-color: $success!important;
+    color: white!important;
     border-color: $success;
 }
 
+.qty-btn:focus {
+    box-shadow: none;
+}
 
+.qty-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.fa-trash:hover, .fa-trash:focus {
+    color:$danger;
+}
 
 .cart-item:last-of-type {
     border-bottom: 2px solid rgba(0,0,0,.2);
@@ -392,6 +422,10 @@ button.no-style:focus, button.no-style:active {
         font-weight: 400;
         font-style: italic;
     }
+}
+
+.modal-content img {
+    width: 200px;
 }
 
 .product-header {
@@ -565,5 +599,5 @@ footer {
 }
 
 .stop-scrolling {
-    overflow: hidden;
+    overflow: visible;
 }
