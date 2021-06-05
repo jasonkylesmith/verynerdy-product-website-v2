@@ -10,21 +10,15 @@ class OutsideClickHandler extends React.Component {
 
     }
 
-    componentWillMount(){
-        document.removeEventListener('mouseup', this.handleClickOutside);
-        document.addEventListener('keyup', this.handleEscapePress);
-    }
-
-    
-
     handleClickOutside = (event) => {
-        if (this.wrapperRef.current && !this.wrapperRef.current.contains(event.target) && this.props.test){
+        if (this.wrapperRef.current && !this.wrapperRef.current.contains(event.target) && this.props.isCartShown){
             this.props.onOutsideClick();
         }
     }
 
     handleEscapePress = (event) => {
-        if (this.props.showCart && event.key === "Escape") {
+        
+        if (this.props.isCartShown && event.key === "Escape") {
             this.props.onOutsideClick();
         }
     }

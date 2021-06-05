@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard'
 import { PRODUCT_DATA } from '../../shared/product-data';
-import {FadeTransform} from 'react-animation-components';
 
 class ProductsSection extends React.Component {
     constructor(props){
@@ -26,15 +25,10 @@ class ProductsSection extends React.Component {
                     <h2 className="">Behold! Our Exclusive Pre-Order Collection</h2>
                     <p className="text-muted">Some of these pre-order designs will only be offered for a limited time! Once we launch, we're giving them the snap and they go the way of the blip!</p>
                 </div>
-                <FadeTransform in transformProps={{
-                    enterTransform: 'scale(1.0)'
-                    }}>
                 <div className="row justify-content-around">
-                    
                         {cards}
                     
                 </div>
-                </FadeTransform>
             </main>
         )
     }

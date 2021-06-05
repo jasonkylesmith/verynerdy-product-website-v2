@@ -3,6 +3,8 @@ The Very Nerdy Clothing Company site is a front-end example of a pre-order merch
 
 To Do:
 
+- First visit logo screen
+- Fixed height loading for carousel
 - Third Row of Products?
 - Product Modal
     - Add tab navigation for sizing?

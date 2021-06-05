@@ -26,7 +26,7 @@ function ShoppingCartSection(props) {
             <CartContext.Consumer>
                 {context => (
                     // If user clicks outside the shopping cart, toggle showCart and close the shopping cart
-                    <OutsideClickHandler test={context.cart.cart.showCart} onOutsideClick={() => {
+                    <OutsideClickHandler isCartShown={context.cart.cart.showCart} onOutsideClick={() => {
                         context.show.toggleShowCart()
                     }} >
                         <Container className={`shopping-cart m-0 px-3 ${classes}`} id="shopping-cart-tray" >  

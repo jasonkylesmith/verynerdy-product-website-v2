@@ -3,11 +3,12 @@ import { Col, Row, Button, Container, } from 'reactstrap';
 
 
 function ShoppingCartDisplay({ items }){
-
+    // Render individual shopping cart items
     const cartItems = items.cart.cart.cart.map(item => {
-        return(<ShoppingCartItem item={item} cart={items} key={item.cartId}/>)
+        return(<ShoppingCartItem item={item} cart={items} key={item.cartId} />)
     })
 
+    // Calculate the subtotal for the cart
     function calcSubtotal({ cart }){
         let subtotal = 0;
         cart.forEach(item => (
@@ -16,10 +17,12 @@ function ShoppingCartDisplay({ items }){
         return subtotal;
     }
 
+    // Calculate the potential donation for the cart
     function calcDonation(cart){
         return ((calcSubtotal(cart) * .03).toFixed(2))
     }
 
+    // If the first item in the cart array exists, display cart information
     if(items.cart.cart.cart[0]){
         return (
             <React.Fragment>
@@ -39,11 +42,9 @@ function ShoppingCartDisplay({ items }){
                         <Button color="primary" className="btn mt-3 mt-md-0">Checkout</Button>
                     </Col>
                 </Row>
-
-
-
             </React.Fragment>
             );
+    // Else display empty cart
     } else {
         return (
             <Col xs={{size: 12, offset: 0}} className="mt-3">
@@ -54,7 +55,7 @@ function ShoppingCartDisplay({ items }){
 }
 
 function DisplayQty({ item, action }){
-
+    // Return item quantity display and adjusters
     return (
         <Col xs={{order: 3, size: 6, offset: 3}} md={{order: 1, size: 4, offset: 0}} className="text-center d-flex align-items-center justify-content-center">
             <Col className="p-0">
@@ -75,11 +76,12 @@ function DisplayQty({ item, action }){
 }
 
 function ShoppingCartItem({ item, cart }){
-
+    // Calculate price of the item * quantity of the item
     function calcPrice(price, qty){
         return price * qty;
     }
 
+    // Return the shopping cart item
     return (
         <React.Fragment>
             <Container className="cart-item">

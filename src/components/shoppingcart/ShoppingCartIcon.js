@@ -4,7 +4,7 @@ import {Badge, Button} from 'reactstrap';
 
 function showNumOfItems(length){
     if(length>0){
-        // Show number icon
+        // Show number badge
         return (
             <Badge color="primary" className="mx-1">{length}</Badge>
         );

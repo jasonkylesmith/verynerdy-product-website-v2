@@ -78,24 +78,6 @@ header {
     }
 }
 
-.page-enter {
-    opacity: 0;
-}
-
-.page-enter-active {
-    opacity: 1;
-    transition: all 500ms ease-out;
-}
-
-.page-exit {
-    opacity: 1;
-}
-
-.page-exit-active {
-    opacity: 0;
-    transition: all 500ms ease-in;
-}
-
 .hamburger-wrapper {
     position: relative;
     height: 30px;
@@ -221,8 +203,7 @@ button.no-style:focus, button.no-style:active {
     border-left: .5rem solid $primary;
     z-index: 4000;
     opacity: 1;
-    transition: right 500ms ease-out,
-                box-shadow 150ms ease-in-out;
+    transition: right 300ms ease-out;
     
     overflow-y: scroll;
     overflow-x: hidden;
@@ -237,6 +218,7 @@ button.no-style:focus, button.no-style:active {
 @media (min-width: 768px) {
     .shopping-cart {
         width: 100vw;
+        transition: right 400ms ease-out;
     }
 
     .shopping-cart-hide {
@@ -248,10 +230,11 @@ button.no-style:focus, button.no-style:active {
 @media (min-width: 992px) {
     .shopping-cart {
         width: 70vw;
+        transition: right 400ms ease-out;
     }
 
     .shopping-cart-hide {
-        right: -100vw;
+        right: -70vw;
         box-shadow: none;
     }
 }
@@ -259,10 +242,11 @@ button.no-style:focus, button.no-style:active {
 @media (min-width: 1200px) {
     .shopping-cart {
         width: 40vw;
+        transition: right 300ms ease-out;
     }
 
     .shopping-cart-hide {
-        right: -100vw;
+        right: -40vw;
         box-shadow: none;
     }
 }

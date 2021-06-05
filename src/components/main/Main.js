@@ -50,9 +50,6 @@ class Main extends React.Component {
 
         return (
             <React.Fragment>
-
-
-
                         <Switch>
                             <Route path='/home' component={HomePage} />
                             <Route path='/TOS' component={TOSPage} />
@@ -60,8 +57,6 @@ class Main extends React.Component {
                             <Route path='/Donations' component={DonationsPage} />
                             <Redirect to='/home' />
                         </Switch>
-
-
             </React.Fragment>
         )
     }
