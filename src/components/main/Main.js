@@ -1,26 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Home from '../pages/Home';
 import TOS from '../pages/TOS';
 import FAQ from '../pages/FAQ';
 import Donations from '../pages/Donations';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { FAQ_DATA } from '../../shared/faq-data';
-import {TransitionGroup, CSSTransition} from 'react-transition-group'
 
-class Main extends React.Component {
+/* class Main extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            cart: [
-                {
-                    
+        
+    } */
+
+    function Main() {
+
+        const { pathname, hash } = useLocation();
+
+        useEffect(() => {
+            // if not a hash link, scroll to top
+            if (hash === '') {
+              window.scrollTo(0, 0);
+            }
+            // else scroll to id
+            else {
+              setTimeout(() => {
+                const id = hash.replace('#', '');
+                const element = document.getElementById(id);
+                if (element) {
+                  element.scrollIntoView();
                 }
-            ]
+              }, 0);
+            }
+          }); // do this on route change
 
-        };
-    }
-
-    render(){
 
         const HomePage = () => {;
             return (
@@ -51,15 +63,15 @@ class Main extends React.Component {
         return (
             <React.Fragment>
                         <Switch>
-                            <Route path='/home' component={HomePage} />
-                            <Route path='/TOS' component={TOSPage} />
-                            <Route path='/FAQ' component={FAQPage} />
-                            <Route path='/Donations' component={DonationsPage} />
-                            <Redirect to='/home' />
+                            <Route path={`${process.env.PUBLIC_URL}/home`} component={HomePage} />
+                            <Route path={`${process.env.PUBLIC_URL}/TOS`} component={TOSPage} />
+                            <Route path={`${process.env.PUBLIC_URL}/FAQ`} component={FAQPage} />
+                            <Route path={`${process.env.PUBLIC_URL}/Donations`} component={DonationsPage} />
+                            <Redirect to={`${process.env.PUBLIC_URL}/home`} />
                         </Switch>
             </React.Fragment>
         )
-    }
+
 
 }
 

@@ -7,7 +7,6 @@ class OutsideClickHandler extends React.Component {
     componentDidMount() {
         document.addEventListener('mouseup', this.handleClickOutside);
         document.addEventListener('keyup', this.handleEscapePress);
-
     }
 
     handleClickOutside = (event) => {
