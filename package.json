@@ -2,7 +2,7 @@
   "name": "portfolio-project-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "http://jasonkylesmith.github.io/verynerdy-product-website-v2",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,6 +10,7 @@
     "bootstrap": "4.5.2",
     "bootstrap-social": "5.1.1",
     "font-awesome": "4.7.0",
+    "gh-pages": "^3.2.0",
     "jquery": "^3.6.0",
     "node-sass": "4.14.1",
     "prop-types": "^15.7.2",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
