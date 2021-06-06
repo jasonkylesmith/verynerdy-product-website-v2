@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/verynerdy-product-website-v2/static/css/main.cc81679f.chunk.css",
-    "main.js": "/verynerdy-product-website-v2/static/js/main.d1d3d2f5.chunk.js",
-    "main.js.map": "/verynerdy-product-website-v2/static/js/main.d1d3d2f5.chunk.js.map",
+    "main.js": "/verynerdy-product-website-v2/static/js/main.5c99fcbb.chunk.js",
+    "main.js.map": "/verynerdy-product-website-v2/static/js/main.5c99fcbb.chunk.js.map",
     "runtime-main.js": "/verynerdy-product-website-v2/static/js/runtime-main.890c8657.js",
     "runtime-main.js.map": "/verynerdy-product-website-v2/static/js/runtime-main.890c8657.js.map",
     "static/css/2.1a67f960.chunk.css": "/verynerdy-product-website-v2/static/css/2.1a67f960.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.1a67f960.chunk.css",
     "static/js/2.21bae1bf.chunk.js",
     "static/css/main.cc81679f.chunk.css",
-    "static/js/main.d1d3d2f5.chunk.js"
+    "static/js/main.5c99fcbb.chunk.js"
   ]
 }
