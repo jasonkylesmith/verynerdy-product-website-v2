@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../navigation/Navigation';
+import {Link} from 'react-router-dom';
 
 
 class Header extends React.Component {
@@ -41,9 +42,9 @@ class Header extends React.Component {
                     <div className="container-fluid">
                         <div className="row align-items-center">
                             <div className="col-5 offset-1 pl-0">
-                                <a href="/home#">
-                                    <img src="/assets/verynerdylogo.png" alt="" className="img-fluid"></img>
-                                </a>
+                                <Link to={`${process.env.PUBLIC_URL}/home#`}>
+                                    <img src="./assets/verynerdylogo.png" alt="" className="img-fluid"></img>
+                                </Link>
                             </div>
                             <div className="col-5 text-right pt-2 pr-0">
                                 <nav className="navbar navbar-expand-md hidden-md navbar-light px-0 d-md-none">

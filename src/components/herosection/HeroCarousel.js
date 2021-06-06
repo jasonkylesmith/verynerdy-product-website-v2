@@ -8,17 +8,17 @@ import {
 
   const items = [
     {
-      src: '/assets/hero-product-bigthree.jpg',
+      src: './assets/hero-product-bigthree.jpg',
       altText: 'First slide, Person wearing The Big Three T-Shirt',
       caption: ''
     },
     {
-      src: '/assets/hero-product-tankmain.jpg',
+      src: './assets/hero-product-tankmain.jpg',
       altText: 'Second slide, Person wearing the Tank Main tanktop',
       caption: ''
     },
     {
-      src: '/assets/hero-product-wasd.jpg',
+      src: './assets/hero-product-wasd.jpg',
       altText: 'Third slide, Person wearing the WASD T-Shirt',
       caption: ''
     }

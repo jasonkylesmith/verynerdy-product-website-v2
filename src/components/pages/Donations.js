@@ -20,7 +20,7 @@ function Donations(props) {
                     <p className="small">
                         Our next donation target date is October 1st, 2021. 
                     </p>
-                    <img src="/assets/donation-thankyou-crop.jpg" alt="'Thank You' spelled out with toy bloods and a yellow heart in between" className="img-fluid" />
+                    <img src="./assets/donation-thankyou-crop.jpg" alt="'Thank You' spelled out with toy bloods and a yellow heart in between" className="img-fluid" />
                 </div>
                 <div className="col-12 col-lg-6">
                     <h4>
