@@ -3,7 +3,7 @@ import ShoppingCartSection from './components/shoppingcart/ShoppingCartSection';
 import Header from './components/main/Header';
 import Main from './components/main/Main';
 import Footer from './components/main/Footer';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { CartProvider, CartContext } from './components/main/ShoppingCartContext'
 
 
@@ -11,7 +11,8 @@ import { CartProvider, CartContext } from './components/main/ShoppingCartContext
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      
         <CartProvider>
           <Header />
           <Main />
@@ -22,6 +23,7 @@ function App() {
           </CartContext.Consumer>
         </CartProvider>
         <Footer />
+      
       </BrowserRouter>
     </div>
   );
