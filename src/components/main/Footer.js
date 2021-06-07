@@ -19,9 +19,9 @@ class Footer extends React.Component {
                         </div>
                         <nav className="navbar navbar-expand col-12 col-lg-5 py-0 text-center justify-content-center">
                             <ul className="navbar-nav">
-                                <li className="nav-item"><NavLink to='/faq' className="nav-link">FAQ</NavLink></li>
-                                <li className="nav-item"><NavLink to='/tos' className="nav-link">Terms of Service</NavLink></li>
-                                <li className="nav-item"><NavLink to='/donations' className="nav-link">Donations</NavLink></li>
+                                <li className="nav-item"><NavLink to={`${process.env.PUBLIC_URL}/faq`} className="nav-link">FAQ</NavLink></li>
+                                <li className="nav-item"><NavLink to={`${process.env.PUBLIC_URL}/tos`} className="nav-link">Terms of Service</NavLink></li>
+                                <li className="nav-item"><NavLink to={`${process.env.PUBLIC_URL}/donations`} className="nav-link">Donations</NavLink></li>
                             </ul>
                         </nav>
                         <div className="col-12 text-center bg-dark text-light">

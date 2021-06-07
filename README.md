@@ -5,20 +5,23 @@ To Do:
 
 - First visit logo screen
 - Fixed height loading for carousel
-- Third Row of Products?
 - Product Modal
     - Add tab navigation for sizing?
 - Aria accessability
 - Cart / Checkout Pages
     - Mock Checkout Page
 - Refactor / Organization of Components and CSS
-            
+    - Refactor CSS to be more mindful of reusability / specificity
+    - Finalize CSS variables for theme
 
 
-Notes:
 
-- Use State to share cart data between ShoppingCart and ProductSection components by passing them a function that modifies a parents setState method
-    - This method would only setState to change the object for items added to the cart from the ProductModal, which would then rerender the ShoppingCart to include the updated state
+Advanced Wishlist: 
+
+- Consume Printful API to bring in products automatically
+- Start orders with Printful API
+- Integrate PayPal or similar to take payments
+- Possible conversion to Redux instead of Context Providers/Consumers            
 
 
 Completed:

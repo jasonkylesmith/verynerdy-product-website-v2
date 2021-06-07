@@ -62,12 +62,12 @@ import { FAQ_DATA } from '../../shared/faq-data';
 
         return (
             <React.Fragment>
-                <Switch basename={process.env.PUBLIC_URL}>
-                    <Route path={`/home`} component={HomePage} />
-                    <Route path={`/TOS`} component={TOSPage} />
-                    <Route path={`/FAQ`} component={FAQPage} />
-                    <Route path={`/Donations`} component={DonationsPage} />
-                    <Redirect to={`/home`} />
+                <Switch>
+                    <Route exact path={`${process.env.PUBLIC_URL}/home`} component={HomePage} />
+                    <Route exact path={`${process.env.PUBLIC_URL}/tos`} component={TOSPage} />
+                    <Route exact path={`${process.env.PUBLIC_URL}/faq`} component={FAQPage} />
+                    <Route exact path={`${process.env.PUBLIC_URL}/donations`} component={DonationsPage} />
+                    <Redirect to={`${process.env.PUBLIC_URL}/home`} />
                 </Switch>
             </React.Fragment>
         )

@@ -11,7 +11,7 @@ import { CartProvider, CartContext } from './components/main/ShoppingCartContext
 function App() {
   return (
     <div>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
       
         <CartProvider>
           <Header />
