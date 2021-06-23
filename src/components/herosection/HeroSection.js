@@ -16,7 +16,7 @@ class HeroSection extends React.Component {
                         <HeroText />
                     </div>
                 </div>
-                <div className="row hero-row align-items-center d-none d-lg-block">
+                <div className="row hero-row align-items-center d-none d-lg-block carousel-row">
                     <div className="col p-0">
                         <HeroCarousel />
                         <div className="hero-text hidden-xs">

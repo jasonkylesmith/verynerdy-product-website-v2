@@ -10,7 +10,7 @@ class ToTopButton extends React.Component {
         return(
             <div className="top-button">
                 {/* <a href={`${process.env.PUBLIC_URL}/home#`}><i className="fa fa-chevron-up p-1 mr-1 mb-2"></i></a> */}
-                <Link to={`${process.env.PUBLIC_URL}/home#`}><i className="fa fa-chevron-up p-1 mr-1 mb-2"></i></Link>
+                <Link to={`${process.env.PUBLIC_URL}/#`}><i className="fa fa-chevron-up p-1 mr-1 mb-2"></i></Link>
             </div>
         )
     }

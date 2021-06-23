@@ -42,7 +42,7 @@ class Header extends React.Component {
                     <div className="container-fluid">
                         <div className="row align-items-center">
                             <div className="col-5 offset-1 pl-0">
-                                <Link to={`${process.env.PUBLIC_URL}/home#`}>
+                                <Link to={`${process.env.PUBLIC_URL}/#`}>
                                     <img src="./assets/verynerdylogo.png" alt="" className="img-fluid"></img>
                                 </Link>
                             </div>

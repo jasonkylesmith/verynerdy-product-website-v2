@@ -10,7 +10,7 @@ class NavigationItem extends React.Component {
     
 
     render(){
-        const hrefText = `${process.env.PUBLIC_URL}/home#${this.props.target.replace(/[^a-zA-Z0-9]/g, '')}`;
+        const hrefText = `${process.env.PUBLIC_URL}/#${this.props.target.replace(/[^a-zA-Z0-9]/g, '')}`;
 
         return (
             <li className="nav-item">

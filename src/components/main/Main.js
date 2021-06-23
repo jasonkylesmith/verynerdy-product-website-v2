@@ -63,11 +63,11 @@ import { FAQ_DATA } from '../../shared/faq-data';
         return (
             <React.Fragment>
                 <Switch>
-                    <Route exact path={`${process.env.PUBLIC_URL}/home`} component={HomePage} />
+                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={HomePage} />
                     <Route exact path={`${process.env.PUBLIC_URL}/tos`} component={TOSPage} />
                     <Route exact path={`${process.env.PUBLIC_URL}/faq`} component={FAQPage} />
                     <Route exact path={`${process.env.PUBLIC_URL}/donations`} component={DonationsPage} />
-                    <Redirect to={`${process.env.PUBLIC_URL}/home`} />
+                    <Redirect to={`${process.env.PUBLIC_URL}/`} />
                 </Switch>
             </React.Fragment>
         )
