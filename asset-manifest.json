@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/verynerdy-product-website-v2/static/css/main.975d0d37.chunk.css",
-    "main.js": "/verynerdy-product-website-v2/static/js/main.bd1832b1.chunk.js",
-    "main.js.map": "/verynerdy-product-website-v2/static/js/main.bd1832b1.chunk.js.map",
+    "main.css": "/verynerdy-product-website-v2/static/css/main.13e2fd30.chunk.css",
+    "main.js": "/verynerdy-product-website-v2/static/js/main.55ba0740.chunk.js",
+    "main.js.map": "/verynerdy-product-website-v2/static/js/main.55ba0740.chunk.js.map",
     "runtime-main.js": "/verynerdy-product-website-v2/static/js/runtime-main.890c8657.js",
     "runtime-main.js.map": "/verynerdy-product-website-v2/static/js/runtime-main.890c8657.js.map",
     "static/css/2.1a67f960.chunk.css": "/verynerdy-product-website-v2/static/css/2.1a67f960.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.67cb6e1d.chunk.js.map": "/verynerdy-product-website-v2/static/js/3.67cb6e1d.chunk.js.map",
     "index.html": "/verynerdy-product-website-v2/index.html",
     "static/css/2.1a67f960.chunk.css.map": "/verynerdy-product-website-v2/static/css/2.1a67f960.chunk.css.map",
-    "static/css/main.975d0d37.chunk.css.map": "/verynerdy-product-website-v2/static/css/main.975d0d37.chunk.css.map",
+    "static/css/main.13e2fd30.chunk.css.map": "/verynerdy-product-website-v2/static/css/main.13e2fd30.chunk.css.map",
     "static/js/2.21bae1bf.chunk.js.LICENSE.txt": "/verynerdy-product-website-v2/static/js/2.21bae1bf.chunk.js.LICENSE.txt",
     "static/media/font-awesome.scss": "/verynerdy-product-website-v2/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/App.scss": "/verynerdy-product-website-v2/static/media/hero-product-tankmain.a5d8c14f.jpg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.890c8657.js",
     "static/css/2.1a67f960.chunk.css",
     "static/js/2.21bae1bf.chunk.js",
-    "static/css/main.975d0d37.chunk.css",
-    "static/js/main.bd1832b1.chunk.js"
+    "static/css/main.13e2fd30.chunk.css",
+    "static/js/main.55ba0740.chunk.js"
   ]
 }
